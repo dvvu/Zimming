@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNextCondensed.ttc">
+            <string>AvenirNextCondensed-DemiBoldItalic</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gSY-xu-JI8"/>
+                        <viewControllerLayoutGuide type="bottom" id="tP1-V8-K8H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ett-tw-L4j">
+                                <rect key="frame" x="75.5" y="269" width="225.5" height="128"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_title" translatesAutoresizingMaskIntoConstraints="NO" id="SOf-8q-AVJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="123" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="123" id="DFt-Na-BAH"/>
+                                            <constraint firstAttribute="width" secondItem="SOf-8q-AVJ" secondAttribute="height" multiplier="123:128" id="fAB-rv-jpZ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zimming" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EW8-oA-rTd">
+                                        <rect key="frame" x="113" y="67.5" width="112.5" height="45.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBoldItalic" family="Avenir Next Condensed" pointSize="33"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EW8-oA-rTd" secondAttribute="trailing" id="1EX-03-oVT"/>
+                                    <constraint firstItem="SOf-8q-AVJ" firstAttribute="top" secondItem="Ett-tw-L4j" secondAttribute="top" id="2Jk-Lf-1Of"/>
+                                    <constraint firstAttribute="bottom" secondItem="SOf-8q-AVJ" secondAttribute="bottom" id="3HV-nU-onl"/>
+                                    <constraint firstItem="EW8-oA-rTd" firstAttribute="leading" secondItem="SOf-8q-AVJ" secondAttribute="trailing" constant="-10" id="8Mb-pp-s0m"/>
+                                    <constraint firstItem="SOf-8q-AVJ" firstAttribute="leading" secondItem="Ett-tw-L4j" secondAttribute="leading" id="Jdd-sU-MfX"/>
+                                    <constraint firstAttribute="bottom" secondItem="EW8-oA-rTd" secondAttribute="bottom" constant="15" id="kra-Ie-3AL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ett-tw-L4j" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="L1V-9c-GbY"/>
+                            <constraint firstItem="Ett-tw-L4j" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wyO-eA-WVu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_title" width="1400" height="1600"/>
+    </resources>
+</document>
