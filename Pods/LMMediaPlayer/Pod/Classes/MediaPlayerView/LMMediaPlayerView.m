@@ -334,7 +334,7 @@ static LMMediaPlayerView *sharedPlayerView;
 	double delayInSeconds = 0.01;
 	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
 	dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
-		[playerLayer_ setPlayer:nil];
+        [playerLayer_ setPlayer:nil];
 		if (self.mediaPlayer.playbackState == LMMediaPlaybackStatePlaying) {
 			[self.mediaPlayer play];
 		}

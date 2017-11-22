@@ -14,6 +14,8 @@
 @interface TopicViewController ()
 
 @property (nonatomic) UIView* mediaView;
+@property (nonatomic) UIBackgroundTaskIdentifier backgroundUpdateTask;
+
 @end
 
 @implementation TopicViewController
@@ -30,7 +32,7 @@
     [self.view addSubview:_mediaView];
     [_mediaView addSubview:player];
     LMMediaItem* item1 = [[LMMediaItem alloc] initWithInfo:@{
-                                                             LMMediaItemInfoURLKey:[NSURL URLWithString:@"https://api.soundcloud.com/tracks/358364042/stream?client_id=XSGYiNkhWe60LlcYKwdw"],
+                                                             LMMediaItemInfoURLKey:[NSURL URLWithString:@"https://api.soundcloud.com/tracks/330004489/stream?client_id=XSGYiNkhWe60LlcYKwdw"],
                                                              LMMediaItemInfoContentTypeKey:@(LMMediaItemContentTypeAudio)
                                                              }];
 
@@ -39,6 +41,27 @@
 
     //Play it!
     [player.mediaPlayer play];
+    
+    [self beginBackgroundUpdateTask];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 4 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        
+        [player.mediaPlayer play];
+    });
+}
+
+- (void)beginBackgroundUpdateTask {
+    
+    _backgroundUpdateTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        
+        [self endBackgroundUpdateTask];
+    }];
+}
+
+- (void) endBackgroundUpdateTask {
+    
+    [[UIApplication sharedApplication] endBackgroundTask: _backgroundUpdateTask];
+    _backgroundUpdateTask = UIBackgroundTaskInvalid;
 }
 
 @end
