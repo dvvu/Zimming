@@ -13,13 +13,14 @@
 #import "API.h"
 
 #import "CategoriesCollectionViewDataSource.h"
+#import "ResultSearchTableViewController.h"
 #import "HomeViewController.h"
 #import "PlaylistViewController.h"
 #import "BXHViewController.h"
 #import "TopicViewController.h"
 #import "CategoryTitles.h"
 
-@interface ViewController () <CategoriesCollectionViewDataSourceDelegate>
+@interface ViewController () <CategoriesCollectionViewDataSourceDelegate, UISearchResultsUpdating>
 
 @property (nonatomic) PlaylistViewController* playlistViewController;
 @property (nonatomic) TopicViewController* topicViewController;
@@ -34,11 +35,15 @@
 @property (nonatomic) UICollectionViewFlowLayout* layout;
 @property (nonatomic) ThreadSafeForMutableArray* titles;
 
+@property (nonatomic) ResultSearchTableViewController* resultSearchTableViewController;
+@property (nonatomic) UISearchController* searchController;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];    
     _layout = [[UICollectionViewFlowLayout alloc] init];
     _layout.itemSize = CGSizeMake((DEVICE_WIDTH - 30)/4, 50);
@@ -94,8 +99,9 @@
     
     // scrolview viewController
     _scrollView.pagingEnabled = YES;
-    _scrollView.scrollEnabled = NO;
-    _scrollView.contentSize = CGSizeMake(DEVICE_WIDTH * 4, _parentView.frame.size.height);
+    [_scrollView setBounces:NO];
+//    _scrollView.scrollEnabled = NO;
+    _scrollView.contentSize = CGSizeMake(DEVICE_WIDTH, _parentView.frame.size.height-100);
     [_scrollView setContentOffset:CGPointMake(0, _scrollView.frame.origin.y) animated:NO];
 }
 
@@ -122,6 +128,43 @@
 - (void)didSelectedItemWithID:(int)idendifier {
     
     [_scrollView setContentOffset:CGPointMake(idendifier * DEVICE_WIDTH, _scrollView.frame.origin.y) animated:YES];
+}
+
+#pragma mark - Create searchBar
+
+- (void)createSearchController {
+    
+    _resultSearchTableViewController = [[ResultSearchTableViewController alloc] init];
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:_resultSearchTableViewController];
+    _searchController.searchResultsUpdater = self;
+    _searchController.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+    _searchController.dimsBackgroundDuringPresentation = YES;
+    _searchController.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+    [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor blackColor]];
+//    [_searchController addSubview:_searchController.searchBar];
+    [_searchController.searchBar sizeToFit];
+}
+
+#pragma mark - updateSearchResultViewController
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    
+    NSString* searchString = searchController.searchBar.text;
+    NSLog(@"%@",searchString);
+//    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"firstName contains[cd] %@ OR lastName contains[cd] %@ OR phoneNumber contains[cd] %@ OR company contains[cd] %@", searchString, searchString, searchString, searchString];
+//
+//    [[CoreDataManager sharedInstance] getEntitiesFromClass:CONTACT withCondition:predicate callbackQueue:nil success:^(NSArray* results) {
+//
+//        [_searchResultTableViewController repareData:results];
+//    } failed:^(NSError* error) {
+//
+//        NSLog(@"%@",error);
+//    }];
+}
+
+- (IBAction)searchAction:(id)sender {
+    
+    [_searchController.searchBar becomeFirstResponder];
 }
 
 @end

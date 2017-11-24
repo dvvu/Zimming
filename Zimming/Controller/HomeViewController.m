@@ -9,6 +9,8 @@
 #import "HotTracksCollectionViewDataSource.h"
 #import "SoundCloudItemManager.h"
 #import "HomeViewController.h"
+#import "AutoScrollVIew.h"
+#import "AutoScrollItem.h"
 #import "Constants.h"
 #import "Masonry.h"
 #import "API.h"
@@ -18,6 +20,7 @@
 @property (nonatomic) HotTracksCollectionViewDataSource* hotTracksCollectionViewDataSource;
 @property (nonatomic) UICollectionViewFlowLayout* layout;
 @property (nonatomic) UICollectionView* collectionView;
+@property (nonatomic) AutoScrollVIew* autoScrollView;
 
 @end
 
@@ -26,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setupAutoScrollVIew];
     [self setupCollectionView];
     [self setupHotTracksData];
 }
@@ -46,7 +50,7 @@
     
     [_collectionView mas_makeConstraints:^(MASConstraintMaker* make) {
         
-        make.top.equalTo(self.view).offset(0);
+        make.top.equalTo(_autoScrollView.mas_bottom).offset(5);
         make.left.equalTo(self.view).offset(10);
         make.right.equalTo(self.view).offset(-10);
         make.bottom.equalTo(self.view).offset(-0);;
@@ -63,6 +67,26 @@
         
         [_hotTracksCollectionViewDataSource setupData:soundCloudItems];
     }];
+}
+
+#pragma mark - setupAutoScrollVIew
+
+- (void)setupAutoScrollVIew {
+    
+    _autoScrollView = [[AutoScrollVIew alloc] initWithFrame:CGRectMake(0, 0, DEVICE_WIDTH, 160)];
+    _autoScrollView.layer.cornerRadius = 5;
+    [self.view addSubview:_autoScrollView];
+    
+    ThreadSafeForMutableArray* autoScrollItems = [[ThreadSafeForMutableArray alloc] init];
+    for (int i = 0; i < 5; i++) {
+        
+        AutoScrollItem* autoScrollItem = [[AutoScrollItem alloc] init];
+        autoScrollItem.title = @"Pop and Rock";
+        autoScrollItem.identifier = [[NSUUID UUID] UUIDString];
+        [autoScrollItems addObject:autoScrollItem];
+    }
+    
+    [_autoScrollView setupData:autoScrollItems];
 }
 
 @end

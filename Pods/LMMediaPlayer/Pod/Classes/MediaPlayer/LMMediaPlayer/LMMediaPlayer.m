@@ -29,6 +29,7 @@ static void *AudioControllerBufferingObservationContext = &AudioControllerBuffer
 }
 
 @property (nonatomic, strong) NSMutableArray *currentQueue;
+@property (nonatomic) UIBackgroundTaskIdentifier backgroundUpdateTask;
 
 @end
 
@@ -214,7 +215,7 @@ static LMMediaPlayer *sharedPlayer;
                         [player_ replaceCurrentItemWithPlayerItem:item];
                         
                         [self.corePlayer.currentItem addObserver:self forKeyPath:kLMLoadedTimeRanges options:NSKeyValueObservingOptionNew context:AudioControllerBufferingObservationContext];
-
+                    
                         [self play];
                         
                     } else {
@@ -254,10 +255,29 @@ static LMMediaPlayer *sharedPlayer;
 	}
 	else {
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerItemDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
-		[player_ play];
+		
+        [self beginBackgroundUpdateTask];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            
+            [player_ play];
+            [self setCurrentState:LMMediaPlaybackStatePlaying];
+        });
 	}
+}
 
-	[self setCurrentState:LMMediaPlaybackStatePlaying];
+- (void)beginBackgroundUpdateTask {
+    
+    _backgroundUpdateTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        
+        [self endBackgroundUpdateTask];
+    }];
+}
+
+- (void) endBackgroundUpdateTask {
+    
+    [[UIApplication sharedApplication] endBackgroundTask: _backgroundUpdateTask];
+    _backgroundUpdateTask = UIBackgroundTaskInvalid;
 }
 
 - (void)playAtIndex:(NSInteger)index

@@ -11,6 +11,12 @@
 		FA3675CB1FC3E79D00D7F751 /* HotTracksCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3675CA1FC3E79D00D7F751 /* HotTracksCollectionViewCell.m */; };
 		FA3675CE1FC3E7B400D7F751 /* HotTracksCollectionViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3675CD1FC3E7B400D7F751 /* HotTracksCollectionViewCellObject.m */; };
 		FA3675D21FC3E93C00D7F751 /* HotTracksCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3675D11FC3E93C00D7F751 /* HotTracksCollectionViewDataSource.m */; };
+		FA5AAB851FC67BDD002CB79D /* AutoScrollVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5AAB841FC67BDD002CB79D /* AutoScrollVIew.m */; };
+		FA5AAB881FC67E67002CB79D /* AutoScrollCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5AAB871FC67E67002CB79D /* AutoScrollCollectionViewCell.m */; };
+		FA5AAB8B1FC67E7B002CB79D /* AutoScrollCollectionViewCellObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5AAB8A1FC67E7B002CB79D /* AutoScrollCollectionViewCellObject.m */; };
+		FA5AAB8E1FC6801A002CB79D /* AutoScrollItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5AAB8D1FC6801A002CB79D /* AutoScrollItem.m */; };
+		FA5AAB941FC68712002CB79D /* PageIndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5AAB931FC68712002CB79D /* PageIndexView.m */; };
+		FA5AAB971FC7BE21002CB79D /* ResultSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5AAB961FC7BE21002CB79D /* ResultSearchTableViewController.m */; };
 		FA6421291FC3036500D3F90A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6421281FC3036500D3F90A /* HomeViewController.m */; };
 		FA64212C1FC3038900D3F90A /* PlaylistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA64212B1FC3038900D3F90A /* PlaylistViewController.m */; };
 		FA64212F1FC3039900D3F90A /* BXHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA64212E1FC3039900D3F90A /* BXHViewController.m */; };
@@ -74,6 +80,18 @@
 		FA3675CD1FC3E7B400D7F751 /* HotTracksCollectionViewCellObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotTracksCollectionViewCellObject.m; sourceTree = "<group>"; };
 		FA3675D01FC3E93C00D7F751 /* HotTracksCollectionViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotTracksCollectionViewDataSource.h; sourceTree = "<group>"; };
 		FA3675D11FC3E93C00D7F751 /* HotTracksCollectionViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotTracksCollectionViewDataSource.m; sourceTree = "<group>"; };
+		FA5AAB831FC67BDD002CB79D /* AutoScrollVIew.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoScrollVIew.h; sourceTree = "<group>"; };
+		FA5AAB841FC67BDD002CB79D /* AutoScrollVIew.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoScrollVIew.m; sourceTree = "<group>"; };
+		FA5AAB861FC67E67002CB79D /* AutoScrollCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoScrollCollectionViewCell.h; sourceTree = "<group>"; };
+		FA5AAB871FC67E67002CB79D /* AutoScrollCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoScrollCollectionViewCell.m; sourceTree = "<group>"; };
+		FA5AAB891FC67E7B002CB79D /* AutoScrollCollectionViewCellObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoScrollCollectionViewCellObject.h; sourceTree = "<group>"; };
+		FA5AAB8A1FC67E7B002CB79D /* AutoScrollCollectionViewCellObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoScrollCollectionViewCellObject.m; sourceTree = "<group>"; };
+		FA5AAB8C1FC6801A002CB79D /* AutoScrollItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoScrollItem.h; sourceTree = "<group>"; };
+		FA5AAB8D1FC6801A002CB79D /* AutoScrollItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoScrollItem.m; sourceTree = "<group>"; };
+		FA5AAB921FC68712002CB79D /* PageIndexView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageIndexView.h; sourceTree = "<group>"; };
+		FA5AAB931FC68712002CB79D /* PageIndexView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageIndexView.m; sourceTree = "<group>"; };
+		FA5AAB951FC7BE21002CB79D /* ResultSearchTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultSearchTableViewController.h; sourceTree = "<group>"; };
+		FA5AAB961FC7BE21002CB79D /* ResultSearchTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultSearchTableViewController.m; sourceTree = "<group>"; };
 		FA6421271FC3036500D3F90A /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FA6421281FC3036500D3F90A /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FA64212A1FC3038900D3F90A /* PlaylistViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaylistViewController.h; sourceTree = "<group>"; };
@@ -196,6 +214,17 @@
 			path = AudioManager;
 			sourceTree = "<group>";
 		};
+		FA5AAB7F1FC67B74002CB79D /* CustomCollectionVIew */ = {
+			isa = PBXGroup;
+			children = (
+				FA5AAB831FC67BDD002CB79D /* AutoScrollVIew.h */,
+				FA5AAB841FC67BDD002CB79D /* AutoScrollVIew.m */,
+				FA5AAB921FC68712002CB79D /* PageIndexView.h */,
+				FA5AAB931FC68712002CB79D /* PageIndexView.m */,
+			);
+			path = CustomCollectionVIew;
+			sourceTree = "<group>";
+		};
 		FA6421241FC302B800D3F90A /* ThresdSafe */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +272,10 @@
 				FA3675CD1FC3E7B400D7F751 /* HotTracksCollectionViewCellObject.m */,
 				FA3675C91FC3E79D00D7F751 /* HotTracksCollectionViewCell.h */,
 				FA3675CA1FC3E79D00D7F751 /* HotTracksCollectionViewCell.m */,
+				FA5AAB861FC67E67002CB79D /* AutoScrollCollectionViewCell.h */,
+				FA5AAB871FC67E67002CB79D /* AutoScrollCollectionViewCell.m */,
+				FA5AAB891FC67E7B002CB79D /* AutoScrollCollectionViewCellObject.h */,
+				FA5AAB8A1FC67E7B002CB79D /* AutoScrollCollectionViewCellObject.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -351,6 +384,8 @@
 				FA99BAEC1FC2DEB200049C26 /* SoundCloudItem.m */,
 				FA6421431FC318BC00D3F90A /* PlaylistItem.h */,
 				FA6421441FC318BC00D3F90A /* PlaylistItem.m */,
+				FA5AAB8C1FC6801A002CB79D /* AutoScrollItem.h */,
+				FA5AAB8D1FC6801A002CB79D /* AutoScrollItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -358,6 +393,7 @@
 		FAFE2D501FC3025800909A37 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA5AAB7F1FC67B74002CB79D /* CustomCollectionVIew */,
 				FA99BA811FC284F800049C26 /* AppDelegate.h */,
 				FA99BA821FC284F800049C26 /* AppDelegate.m */,
 				FA99BA841FC284F800049C26 /* ViewController.h */,
@@ -370,6 +406,8 @@
 				FA64212E1FC3039900D3F90A /* BXHViewController.m */,
 				FA6421301FC303D300D3F90A /* TopicViewController.h */,
 				FA6421311FC303D300D3F90A /* TopicViewController.m */,
+				FA5AAB951FC7BE21002CB79D /* ResultSearchTableViewController.h */,
+				FA5AAB961FC7BE21002CB79D /* ResultSearchTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -586,9 +624,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA64214B1FC31AFE00D3F90A /* PlayListCollectionViewCell.m in Sources */,
+				FA5AAB941FC68712002CB79D /* PageIndexView.m in Sources */,
 				FA99BA861FC284F800049C26 /* ViewController.m in Sources */,
 				FA6421321FC303D300D3F90A /* TopicViewController.m in Sources */,
 				FA99BAF21FC2DEDE00049C26 /* SoundCloudItemManager.m in Sources */,
+				FA5AAB881FC67E67002CB79D /* AutoScrollCollectionViewCell.m in Sources */,
 				FA6421621FC3366200D3F90A /* NSString+Extension.m in Sources */,
 				FA6421631FC3366200D3F90A /* VDTSMutableDictionary.m in Sources */,
 				FA3675CE1FC3E7B400D7F751 /* HotTracksCollectionViewCellObject.m in Sources */,
@@ -601,6 +641,7 @@
 				FA64212F1FC3039900D3F90A /* BXHViewController.m in Sources */,
 				FA6421481FC31A9400D3F90A /* PlayListCollectionViewCellObject.m in Sources */,
 				FA6421651FC3366200D3F90A /* VDImageCache.m in Sources */,
+				FA5AAB971FC7BE21002CB79D /* ResultSearchTableViewController.m in Sources */,
 				FA3675CB1FC3E79D00D7F751 /* HotTracksCollectionViewCell.m in Sources */,
 				FA99BAED1FC2DEB200049C26 /* SoundCloudItem.m in Sources */,
 				FA64213C1FC307E200D3F90A /* CategoriesCollectionViewCellObject.m in Sources */,
@@ -612,11 +653,14 @@
 				FA64216A1FC3366200D3F90A /* VDLRUObject.m in Sources */,
 				FA6421611FC3366200D3F90A /* VDTSMutableArray.m in Sources */,
 				FA6421681FC3366200D3F90A /* VDLinkedList.m in Sources */,
+				FA5AAB8B1FC67E7B002CB79D /* AutoScrollCollectionViewCellObject.m in Sources */,
 				FA6421661FC3366200D3F90A /* UIImage+Extension.m in Sources */,
+				FA5AAB8E1FC6801A002CB79D /* AutoScrollItem.m in Sources */,
 				FA6421641FC3366200D3F90A /* NSDate+Extension.m in Sources */,
 				FA6421421FC317A800D3F90A /* PlaylistViewControllerDataSource.m in Sources */,
 				FA64213F1FC3082D00D3F90A /* CategoryTitles.m in Sources */,
 				FA99BAE91FC2DA3A00049C26 /* NetworkingClient.m in Sources */,
+				FA5AAB851FC67BDD002CB79D /* AutoScrollVIew.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

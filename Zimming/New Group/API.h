@@ -40,6 +40,8 @@ typedef enum {
 #define PLAYLISTURL @"http://api.soundcloud.com/playlists?"
 #define GETTRACKURL @"http://api.soundcloud.com/tracks/358364042?"
 
+// GOOGLE SEARCH API + KEY SEARCH
+#define GOOGLESEARCHURL @"http://suggestqueries.google.com/complete/search?client=chrome&q="
 
 
 
